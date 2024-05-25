@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+<title>Playlist</title>
+</head>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+  <form method="post">
+    <h4>inserisci i dati di una canzone</h4>
+    <p>
+    Titolo: <input name="titolo" id="titolo" type="text"/> <p>
+    Artista: <input name="artista" id="artista" type="text"/> <p>
+    Featuring: <input name="feat" id="feat" type="text"/> <p>
+    Genere: <select name="genere" id="genere">
+      <option hidden value=''></option>
+      <option id="pop">pop</option>
+      <option id="hip pop">hip pop</option>
+      <option id="rap">rap</option>
+      <option id="altro">altro</option>
+      </select> <p>
+    Durata: <input name="durata" id="durata" type="number"/> (sec) 
+    <p>
+    <a id="sparisci"><button type="submit" name="aggiungi">Aggiungi</button></a>
+    <a id="sparisci2"><button type="submit" name="cancella">Cancella</button></a>
+    <a id="sparisci3"><button type="submit" name="modifica">Modifica</button></a>
+    <a id="sparisci4"><button type="reset">Annulla</button></a>
+  </form>
+  {{#error}}
+  <div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span> 
+    <strong>Utente aggiunto</strong>
+    </div>
+    {{/error}}
+    {{#error2}}
+  <div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span> 
+    <strong>la canzone è già stata inserita in precedenza</strong>
+    </div>
+    {{/error2}}
+  <script src="templates/pages/js/java.js"></script>
+</body>
